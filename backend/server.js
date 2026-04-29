@@ -5,9 +5,10 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 
 const app = express();
+// Replace your old app.use(cors(...)) with this:
 app.use(cors({
-  origin: "https://viteee-prep.vercel.app", // Allows your Vercel site to connect
-  methods: ["GET", "POST"],                // Specifies allowed actions
+  origin: "*", // This allows ANY website to talk to your backend
+  methods: ["GET", "POST"],
   credentials: true
 }));
 app.use(express.json());
