@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
-import api from "../lib/api";
+import { API_URL } from "../lib/api";
 
 export default function VITEEEMock() {
   const [questions, setQuestions] = useState([]);
