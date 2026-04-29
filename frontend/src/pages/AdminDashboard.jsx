@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { https://viteee-prep-backend.onrender.com } from "../lib/api";
+import { API_URL } from "../lib/api";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from "recharts";
