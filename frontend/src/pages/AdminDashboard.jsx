@@ -9,7 +9,7 @@ export default function AdminDashboard() {
   const [analytics, setAnalytics] = useState(null);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/gamification`)
+    fetch(`${https://viteee-prep-backend.onrender.com}/gamification`)
       .then(res => res.json())
       .then(data => setGamification(data))
       .catch(err => console.log("Backend not connected yet"));
