@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
-import { API_URL } from "../lib/api";
+
+
+// Use it like this:
+const response = await fetch(`${API_URL}/questions`);
 
 export default function VITEEEMock() {
   const [questions, setQuestions] = useState([]);
