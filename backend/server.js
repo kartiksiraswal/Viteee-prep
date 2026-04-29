@@ -5,7 +5,11 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://viteee-prep.vercel.app", // Allows your Vercel site to connect
+  methods: ["GET", "POST"],                // Specifies allowed actions
+  credentials: true
+}));
 app.use(express.json());
 // Root route to check if server is live
 app.get("/", (req, res) => {
