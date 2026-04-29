@@ -14,7 +14,7 @@ export default function VITEEEMock() {
   const [results, setResults] = useState(null);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/questions`)
+    fetch(`${https://viteee-prep-backend.onrender.com}/questions`)
       .then(res => res.json())
       .then(data => setQuestions(data));
   }, []);
