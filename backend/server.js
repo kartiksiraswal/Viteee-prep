@@ -7,6 +7,10 @@ const jwt = require("jsonwebtoken");
 const app = express();
 app.use(cors());
 app.use(express.json());
+// Root route to check if server is live
+app.get("/", (req, res) => {
+  res.send("🔥 VITEEE-Prep API is live and running!");
+});
 
 const SECRET = process.env.SECRET;
 
