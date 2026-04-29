@@ -50,7 +50,7 @@ export default function VITEEEMock() {
     const token = localStorage.getItem("token") || "test-user-token"; 
     
     try {
-      const response = await fetch(`${API_BASE_URL}/submit`, {
+      const response = await fetch(`${https://viteee-prep-backend.onrender.com}/submit`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: token },
         body: JSON.stringify({ answers: userAnswers })
