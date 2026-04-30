@@ -3,8 +3,6 @@ import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 
 
-// Use it like this:
-const response = await fetch(`${API_URL}/questions`);
 
 export default function VITEEEMock() {
   const [questions, setQuestions] = useState([]);
