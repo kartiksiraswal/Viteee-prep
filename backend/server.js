@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 
-const app = express();
+const app = express({ limit: "1mb" }));
 // Replace your old app.use(cors(...)) with this:
 app.use(cors({
   origin: "*",
