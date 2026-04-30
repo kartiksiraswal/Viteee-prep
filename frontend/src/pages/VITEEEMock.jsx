@@ -4,6 +4,8 @@ import API from "../lib/api";
 export default function VITEEEMock() {
   const [questions, setQuestions] = useState([]);
   const [current, setCurrent] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(150 * 60); // ⏱️ 150 mins
+  const [submitted, setSubmitted] = useState(false);
   const [selected, setSelected] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [answers, setAnswers] = useState([]);
