@@ -1,2 +1,3 @@
-// This is a string variable that stores your link
-export const API_URL = "https://viteee-prep-backend.onrender.com";
+const API = "https://viteee-prep-backend.onrender.com";
+
+export default API;
