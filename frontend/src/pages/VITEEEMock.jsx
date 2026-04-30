@@ -61,32 +61,31 @@ export default function VITEEEMock() {
   };
 
   const submitTest = async () => {
-    if (submitted) return; // prevent multiple submits
+  if (submitted) return;
   setSubmitted(true);
 
-    try {
-      const res = await fetch(`${API}/submit`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        const formattedAnswers = Object.entries(answers).map(
-  ([questionId, answer]) => ({ questionId, answer })
-);
+  try {
+    // ✅ STEP 1: Create formatted answers FIRST
+    const formattedAnswers = Object.entries(answers).map(
+      ([questionId, answer]) => ({ questionId, answer })
+    );
 
-const res = await fetch(`${API}/submit`, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ answers: formattedAnswers })
-});
-      });
+    // ✅ STEP 2: Then use it in fetch
+    const res = await fetch(`${API}/submit`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ answers: formattedAnswers })
+    });
 
-      const data = await res.json();
-      setResult(data);
-    } catch (err) {
-      console.log("Submit failed", err);
-    }
-  };
+    const data = await res.json();
+    setResult(data);
+
+  } catch (err) {
+    console.log("Submit failed", err);
+  }
+};
 
   // 🧪 Loading state
   if (questions.length === 0) return <h2>Loading questions...</h2>;
