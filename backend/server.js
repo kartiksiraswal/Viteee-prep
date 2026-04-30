@@ -4,13 +4,13 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 
-const app = express({ limit: "1mb" }));
+const app = express();
 // Replace your old app.use(cors(...)) with this:
 app.use(cors({
   origin: "*",
   methods: ["GET", "POST"]
 }));
-app.use(express.json());
+app.use(express.json({ limit: "1mb" }));
 // Root route to check if server is live
 app.get("/", (req, res) => {
   res.send("🔥 VITEEE-Prep API is live and running!");
