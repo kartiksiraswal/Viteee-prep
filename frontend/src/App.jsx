@@ -1,4 +1,4 @@
-import VITEEEMock from "./VITEEEMock";
+import VITEEEMock from "./pages/VITEEEMock";
 
 export default function App() {
   return <VITEEEMock />;
