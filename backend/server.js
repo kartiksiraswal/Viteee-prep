@@ -59,7 +59,7 @@ const auth = async (req, res, next) => {
 // 1. Get Questions (Creates dummy data if DB is empty)
 app.get("/questions", async (req, res) => {
   let count = await Question.countDocuments();
-  if (count === 0) {
+  if (count < 20) {
     await Question.insertMany([
   {
     subject: "Physics",
