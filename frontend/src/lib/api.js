@@ -1,3 +1,3 @@
-const API_URL = "https://viteee-prep-backend.onrender.com";
+const API = "https://viteee-prep-backend.onrender.com";
 
-export default API_URL;
+export default API;
