@@ -4,53 +4,56 @@ import API from "../lib/api";
 export default function VITEEEMock() {
   const [questions, setQuestions] = useState([]);
   const [current, setCurrent] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(150 * 60); // ⏱️ 150 mins
+  const [timeLeft, setTimeLeft] = useState(150 * 60);
   const [submitted, setSubmitted] = useState(false);
   const [selected, setSelected] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [answers, setAnswers] = useState({});
   const [result, setResult] = useState(null);
-  
+
   console.log("Questions:", questions);
 
-  // 🔥 Fetch questions
+  // ✅ Fetch questions
   useEffect(() => {
     fetch(`${API}/questions`)
       .then(res => res.json())
       .then(setQuestions)
       .catch(() => console.log("Error loading questions"));
   }, []);
+
+  // ✅ Timer
   useEffect(() => {
-  if (timeLeft <= 0) {
-    submitTest();
-    return;
-  }
-    
+    if (timeLeft <= 0) {
+      submitTest();
+      return;
+    }
 
-  const timer = setInterval(() => {
-    setTimeLeft((prev) => prev - 1);
-  }, 1000);
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => prev - 1);
+    }, 1000);
 
-  return () => clearInterval(timer);
-}, [timeLeft]);
+    return () => clearInterval(timer);
+  }, [timeLeft]);
 
-  const q = questions[current] || {};
-
-    useEffect(() => {
+  // ✅ Restore selected answer (FIXED POSITION)
+  useEffect(() => {
     const qid = questions[current]?._id;
     if (qid && answers[qid]) {
       setSelected(answers[qid]);
     } else {
       setSelected(null);
     }
-  }, [current, questions])
+  }, [current, questions]);
+
+  // ✅ NOW declare q AFTER hooks
+  const q = questions[current] || {};
 
   const handleSubmit = () => {
     setShowAnswer(true);
     setAnswers({
-  ...answers,
-  [q._id]: selected
-});
+      ...answers,
+      [q._id]: selected
+    });
   };
 
   const handleNext = () => {
@@ -65,38 +68,33 @@ export default function VITEEEMock() {
   };
 
   const submitTest = async () => {
-  if (submitted) return;
-  setSubmitted(true);
+    if (submitted) return;
+    setSubmitted(true);
 
-  try {
-    // ✅ STEP 1: Create formatted answers FIRST
-    const formattedAnswers = Object.entries(answers).map(
-      ([questionId, answer]) => ({ questionId, answer })
-    );
+    try {
+      const formattedAnswers = Object.entries(answers).map(
+        ([questionId, answer]) => ({ questionId, answer })
+      );
 
-    // ✅ STEP 2: Then use it in fetch
-    const res = await fetch(`${API}/submit`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ answers: formattedAnswers })
-    });
+      const res = await fetch(`${API}/submit`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ answers: formattedAnswers })
+      });
 
-    const data = await res.json();
-    setResult(data);
+      const data = await res.json();
+      setResult(data);
+    } catch (err) {
+      console.log("Submit failed", err);
+    }
+  };
 
-  } catch (err) {
-    console.log("Submit failed", err);
-  }
-};
-
-  // 🧪 Loading state
   if (!questions || questions.length === 0) {
-  return <h2>Loading questions...</h2>;
-}
+    return <h2>Loading questions...</h2>;
+  }
 
-  // 🎉 Result screen
   if (result) {
     return (
       <div style={{ padding: 40 }}>
@@ -112,42 +110,46 @@ export default function VITEEEMock() {
   return (
     <div style={{ padding: 40 }}>
       <h3>
-  ⏱️ Time Left: {Math.floor(timeLeft / 60)}:
-  {("0" + (timeLeft % 60)).slice(-2)}
-</h3>
-      <div style={{ marginBottom: 20 }}>
-  {questions.map((_, index) => {
-    const qid = questions[index]?._id;
-    const isAnswered = answers[qid];
-    const isCurrent = index === current;
+        ⏱️ Time Left: {Math.floor(timeLeft / 60)}:
+        {("0" + (timeLeft % 60)).slice(-2)}
+      </h3>
 
-    return (
-      <button
-        key={index}
-        onClick={() => setCurrent(index)}
-        style={{
-          margin: 5,
-          padding: "10px",
-          width: 40,
-          background: isCurrent
-            ? "blue"
-            : isAnswered
-            ? "green"
-            : "gray",
-          color: "white",
-          border: "none",
-          borderRadius: "6px"
-        }}
-      >
-        {index + 1}
-      </button>
-    );
-  })}
-</div>
+      {/* ✅ Question Palette */}
+      <div style={{ marginBottom: 20 }}>
+        {questions.map((_, index) => {
+          const qid = questions[index]?._id;
+          const isAnswered = answers[qid];
+          const isCurrent = index === current;
+
+          return (
+            <button
+              key={index}
+              onClick={() => setCurrent(index)}
+              style={{
+                margin: 5,
+                padding: "10px",
+                width: 40,
+                background: isCurrent
+                  ? "blue"
+                  : isAnswered
+                  ? "green"
+                  : "gray",
+                color: "white",
+                border: "none",
+                borderRadius: "6px"
+              }}
+            >
+              {index + 1}
+            </button>
+          );
+        })}
+      </div>
+
       <h2>Question {current + 1}</h2>
       <p>{q.question}</p>
 
-      {q.options.map((opt, i) => (
+      {/* ✅ SAFE OPTIONS */}
+      {q.options?.map((opt, i) => (
         <button
           key={i}
           onClick={() => !showAnswer && setSelected(opt)}
