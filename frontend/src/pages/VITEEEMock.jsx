@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import API_URL from "../api";
+import API_URL from "../lib/api";
 
 export default function VITEEEMock() {
   const [questions, setQuestions] = useState([]);
