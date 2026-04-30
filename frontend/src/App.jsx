@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import API from "./api";
+import API from "./lib/api";
 
 export default function App() {
   const [data, setData] = useState("Loading...");
