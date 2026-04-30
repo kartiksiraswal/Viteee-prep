@@ -60,12 +60,26 @@ const auth = async (req, res, next) => {
 app.get("/questions", async (req, res) => {
   let count = await Question.countDocuments();
   if (count === 0) {
-    await Question.create({
-      subject: "Physics", chapter: "Mechanics", year: 2023,
-      question: "A 2 kg object moving at 3 m/s has momentum?",
-      options: ["6 kg·m/s", "3 kg·m/s", "5 kg·m/s", "9 kg·m/s"],
-      answer: "6 kg·m/s", explanation: "Momentum p = mv = 2×3 = 6 kg·m/s"
-    });
+    await Question.insertMany([
+  {
+    subject: "Physics",
+    chapter: "Mechanics",
+    year: 2023,
+    question: "Momentum of 2kg moving at 3m/s?",
+    options: ["6", "3", "5", "9"],
+    answer: "6",
+    explanation: "p = mv = 2×3 = 6"
+  },
+  {
+    subject: "Math",
+    chapter: "Algebra",
+    year: 2022,
+    question: "Solve: 2 + 2 = ?",
+    options: ["3", "4", "5", "6"],
+    answer: "4",
+    explanation: "Basic addition"
+  }
+]);
   }
   const countQ = await Question.countDocuments();
 const size = Math.min(10, countQ);
