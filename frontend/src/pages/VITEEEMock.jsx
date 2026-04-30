@@ -10,6 +10,8 @@ export default function VITEEEMock() {
   const [showAnswer, setShowAnswer] = useState(false);
   const [answers, setAnswers] = useState({});
   const [result, setResult] = useState(null);
+  
+  console.log("Questions:", questions);
 
   // 🔥 Fetch questions
   useEffect(() => {
