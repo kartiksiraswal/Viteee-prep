@@ -7,9 +7,8 @@ const jwt = require("jsonwebtoken");
 const app = express();
 // Replace your old app.use(cors(...)) with this:
 app.use(cors({
-  origin: "*", // This allows ANY website to talk to your backend
-  methods: ["GET", "POST"],
-  credentials: true
+  origin: "*",
+  methods: ["GET", "POST"]
 }));
 app.use(express.json());
 // Root route to check if server is live
