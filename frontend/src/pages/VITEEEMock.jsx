@@ -8,7 +8,7 @@ export default function VITEEEMock() {
   const [submitted, setSubmitted] = useState(false);
   const [selected, setSelected] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [answers, setAnswers] = useState([]);
+  const [answers, setAnswers] = useState({});
   const [result, setResult] = useState(null);
 
   // 🔥 Fetch questions
@@ -23,6 +23,14 @@ export default function VITEEEMock() {
     submitTest();
     return;
   }
+    useEffect(() => {
+  const qid = questions[current]?._id;
+  if (qid && answers[qid]) {
+    setSelected(answers[qid]);
+  } else {
+    setSelected(null);
+  }
+}, [current, questions]);
 
   const timer = setInterval(() => {
     setTimeLeft((prev) => prev - 1);
@@ -62,7 +70,15 @@ export default function VITEEEMock() {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ answers })
+        const formattedAnswers = Object.entries(answers).map(
+  ([questionId, answer]) => ({ questionId, answer })
+);
+
+const res = await fetch(`${API}/submit`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ answers: formattedAnswers })
+});
       });
 
       const data = await res.json();
@@ -94,6 +110,35 @@ export default function VITEEEMock() {
   ⏱️ Time Left: {Math.floor(timeLeft / 60)}:
   {("0" + (timeLeft % 60)).slice(-2)}
 </h3>
+      <div style={{ marginBottom: 20 }}>
+  {questions.map((_, index) => {
+    const qid = questions[index]._id;
+    const isAnswered = answers[qid];
+    const isCurrent = index === current;
+
+    return (
+      <button
+        key={index}
+        onClick={() => setCurrent(index)}
+        style={{
+          margin: 5,
+          padding: "10px",
+          width: 40,
+          background: isCurrent
+            ? "blue"
+            : isAnswered
+            ? "green"
+            : "gray",
+          color: "white",
+          border: "none",
+          borderRadius: "6px"
+        }}
+      >
+        {index + 1}
+      </button>
+    );
+  })}
+</div>
       <h2>Question {current + 1}</h2>
       <p>{q.question}</p>
 
