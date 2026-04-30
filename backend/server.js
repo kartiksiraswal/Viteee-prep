@@ -67,7 +67,12 @@ app.get("/questions", async (req, res) => {
       answer: "6 kg·m/s", explanation: "Momentum p = mv = 2×3 = 6 kg·m/s"
     });
   }
-  const data = await Question.aggregate([{ $sample: { size: 10 } }]);
+  const countQ = await Question.countDocuments();
+const size = Math.min(10, countQ);
+
+const data = await Question.aggregate([
+  { $sample: { size } }
+]);
   res.json(data);
 });
 
