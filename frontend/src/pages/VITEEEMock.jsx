@@ -88,7 +88,9 @@ export default function VITEEEMock() {
 };
 
   // 🧪 Loading state
-  if (questions.length === 0) return <h2>Loading questions...</h2>;
+  if (!questions || questions.length === 0) {
+  return <h2>Loading questions...</h2>;
+}
 
   // 🎉 Result screen
   if (result) {
