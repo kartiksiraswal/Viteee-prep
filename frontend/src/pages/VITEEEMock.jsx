@@ -25,14 +25,7 @@ export default function VITEEEMock() {
     submitTest();
     return;
   }
-    useEffect(() => {
-  const qid = questions[current]?._id;
-  if (qid && answers[qid]) {
-    setSelected(answers[qid]);
-  } else {
-    setSelected(null);
-  }
-}, [current, questions]);
+    
 
   const timer = setInterval(() => {
     setTimeLeft((prev) => prev - 1);
@@ -42,6 +35,15 @@ export default function VITEEEMock() {
 }, [timeLeft]);
 
   const q = questions[current] || {};
+
+    useEffect(() => {
+    const qid = questions[current]?._id;
+    if (qid && answers[qid]) {
+      setSelected(answers[qid]);
+    } else {
+      setSelected(null);
+    }
+  }, [current, questions])
 
   const handleSubmit = () => {
     setShowAnswer(true);
