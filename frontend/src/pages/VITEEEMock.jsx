@@ -35,7 +35,10 @@ export default function VITEEEMock() {
 
   const handleSubmit = () => {
     setShowAnswer(true);
-    setAnswers([...answers, { questionId: q._id, answer: selected }]);
+    setAnswers({
+  ...answers,
+  [q._id]: selected
+});
   };
 
   const handleNext = () => {
