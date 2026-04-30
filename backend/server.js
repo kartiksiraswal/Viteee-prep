@@ -70,9 +70,7 @@ app.get("/questions", async (req, res) => {
   const countQ = await Question.countDocuments();
 const size = Math.min(10, countQ);
 
-const data = await Question.aggregate([
-  { $sample: { size } }
-]);
+const data = await Question.find();
   res.json(data);
 });
 
