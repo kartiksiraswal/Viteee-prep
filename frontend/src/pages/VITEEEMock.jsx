@@ -113,7 +113,7 @@ export default function VITEEEMock() {
 </h3>
       <div style={{ marginBottom: 20 }}>
   {questions.map((_, index) => {
-    const qid = questions[index]._id;
+    const qid = questions[index]?._id;
     const isAnswered = answers[qid];
     const isCurrent = index === current;
 
