@@ -39,7 +39,7 @@ export default function VITEEEMock() {
   return () => clearInterval(timer);
 }, [timeLeft]);
 
-  const q = questions[current];
+  const q = questions[current] || {};
 
   const handleSubmit = () => {
     setShowAnswer(true);
