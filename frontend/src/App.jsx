@@ -1,17 +1,21 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
-import VITEEEMock from "./pages/VITEEEMock";
-import AdminDashboard from "./pages/AdminDashboard";
+import React, { useEffect, useState } from "react";
+import API from "./api";
 
 export default function App() {
+  const [data, setData] = useState("Loading...");
+
+  useEffect(() => {
+    fetch(API)
+      .then((res) => res.text())
+      .then((result) => setData(result))
+      .catch(() => setData("Error connecting backend"));
+  }, []);
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/test" element={<VITEEEMock />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-      </Routes>
-    </Router>
+    <div style={{ padding: "40px" }}>
+      <h1>🚀 VITEEE Prep App</h1>
+      <p>Backend says:</p>
+      <h2>{data}</h2>
+    </div>
   );
 }
