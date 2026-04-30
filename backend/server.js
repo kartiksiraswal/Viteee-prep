@@ -12,8 +12,8 @@ app.use(cors({
 }));
 app.use(express.json({ limit: "1mb" }));
 // Root route to check if server is live
-app.get("/", (req, res) => {
-  res.send("🔥 VITEEE-Prep API is live and running!");
+app.get("/test", (req, res) => {
+  res.json({ message: "API working perfectly" });
 });
 
 const SECRET = process.env.SECRET;
