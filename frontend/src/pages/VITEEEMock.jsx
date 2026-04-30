@@ -18,6 +18,18 @@ export default function VITEEEMock() {
       .then(setQuestions)
       .catch(() => console.log("Error loading questions"));
   }, []);
+  useEffect(() => {
+  if (timeLeft <= 0) {
+    submitTest();
+    return;
+  }
+
+  const timer = setInterval(() => {
+    setTimeLeft((prev) => prev - 1);
+  }, 1000);
+
+  return () => clearInterval(timer);
+}, [timeLeft]);
 
   const q = questions[current];
 
@@ -38,6 +50,9 @@ export default function VITEEEMock() {
   };
 
   const submitTest = async () => {
+    if (submitted) return; // prevent multiple submits
+  setSubmitted(true);
+
     try {
       const res = await fetch(`${API}/submit`, {
         method: "POST",
@@ -72,6 +87,10 @@ export default function VITEEEMock() {
 
   return (
     <div style={{ padding: 40 }}>
+      <h3>
+  ⏱️ Time Left: {Math.floor(timeLeft / 60)}:
+  {("0" + (timeLeft % 60)).slice(-2)}
+</h3>
       <h2>Question {current + 1}</h2>
       <p>{q.question}</p>
 
