@@ -59,28 +59,10 @@ const auth = async (req, res, next) => {
 // 1. Get Questions (Creates dummy data if DB is empty)
 app.get("/questions", async (req, res) => {
   let count = await Question.countDocuments();
-  if (count < 20) {
-    await Question.insertMany([
-  {
-    subject: "Physics",
-    chapter: "Mechanics",
-    year: 2023,
-    question: "Momentum of 2kg moving at 3m/s?",
-    options: ["6", "3", "5", "9"],
-    answer: "6",
-    explanation: "p = mv = 2×3 = 6"
-  },
-  {
-    subject: "Math",
-    chapter: "Algebra",
-    year: 2022,
-    question: "Solve: 2 + 2 = ?",
-    options: ["3", "4", "5", "6"],
-    answer: "4",
-    explanation: "Basic addition"
-  }
-]);
-  }
+  if (count === 0) {
+  const data = JSON.parse(fs.readFileSync("./questions.json", "utf-8"));
+  await Question.insertMany(data);
+}
   const countQ = await Question.countDocuments();
 const size = Math.min(10, countQ);
 
