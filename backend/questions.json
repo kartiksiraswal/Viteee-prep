@@ -1,0 +1,182 @@
+[
+  {
+    "subject": "Physics",
+    "chapter": "Mechanics",
+    "year": 2023,
+    "question": "A body of mass 2 kg moves with velocity 3 m/s. Find momentum.",
+    "options": ["6 kg·m/s", "3 kg·m/s", "5 kg·m/s", "9 kg·m/s"],
+    "answer": "6 kg·m/s",
+    "explanation": "Momentum p = mv = 2 × 3 = 6"
+  },
+  {
+    "subject": "Physics",
+    "chapter": "Work Energy Power",
+    "year": 2022,
+    "question": "Kinetic energy of a 2 kg body moving at 2 m/s?",
+    "options": ["2 J", "4 J", "8 J", "16 J"],
+    "answer": "4 J",
+    "explanation": "KE = ½mv² = ½×2×4 = 4 J"
+  },
+  {
+    "subject": "Physics",
+    "chapter": "Electrostatics",
+    "year": 2021,
+    "question": "Unit of electric field?",
+    "options": ["N/C", "Volt", "Coulomb", "Ampere"],
+    "answer": "N/C",
+    "explanation": "Electric field = Force/Charge → N/C"
+  },
+  {
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "year": 2020,
+    "question": "Ohm’s law is V = ?",
+    "options": ["IR", "I/R", "R/I", "None"],
+    "answer": "IR",
+    "explanation": "Ohm’s law: V = IR"
+  },
+  {
+    "subject": "Math",
+    "chapter": "Algebra",
+    "year": 2023,
+    "question": "Solve: x² - 5x + 6 = 0",
+    "options": ["2,3", "1,6", "3,4", "None"],
+    "answer": "2,3",
+    "explanation": "Factors: (x-2)(x-3)=0"
+  },
+  {
+    "subject": "Math",
+    "chapter": "Trigonometry",
+    "year": 2022,
+    "question": "sin²θ + cos²θ = ?",
+    "options": ["1", "0", "2", "-1"],
+    "answer": "1",
+    "explanation": "Basic identity"
+  },
+  {
+    "subject": "Math",
+    "chapter": "Calculus",
+    "year": 2021,
+    "question": "Derivative of x²?",
+    "options": ["2x", "x", "x²", "1"],
+    "answer": "2x",
+    "explanation": "d/dx(x²)=2x"
+  },
+  {
+    "subject": "Math",
+    "chapter": "Probability",
+    "year": 2020,
+    "question": "Probability of head in coin toss?",
+    "options": ["1/2", "1", "0", "2"],
+    "answer": "1/2",
+    "explanation": "2 outcomes → 1 favorable"
+  },
+  {
+    "subject": "Chemistry",
+    "chapter": "Atomic Structure",
+    "year": 2023,
+    "question": "Atomic number represents?",
+    "options": ["Protons", "Neutrons", "Electrons", "Mass"],
+    "answer": "Protons",
+    "explanation": "Atomic number = number of protons"
+  },
+  {
+    "subject": "Chemistry",
+    "chapter": "Periodic Table",
+    "year": 2022,
+    "question": "Group 1 elements are called?",
+    "options": ["Alkali metals", "Halogens", "Noble gases", "Transition"],
+    "answer": "Alkali metals",
+    "explanation": "Group 1 = Alkali metals"
+  },
+  {
+    "subject": "Physics",
+    "chapter": "Optics",
+    "year": 2021,
+    "question": "Speed of light?",
+    "options": ["3×10^8 m/s", "3×10^6", "3×10^5", "None"],
+    "answer": "3×10^8 m/s",
+    "explanation": "Constant c"
+  },
+  {
+    "subject": "Math",
+    "chapter": "Matrices",
+    "year": 2022,
+    "question": "Determinant of 2x2 matrix formula?",
+    "options": ["ad-bc", "ab+cd", "a+b", "None"],
+    "answer": "ad-bc",
+    "explanation": "Standard formula"
+  },
+  {
+    "subject": "Chemistry",
+    "chapter": "Bonding",
+    "year": 2021,
+    "question": "Covalent bond involves?",
+    "options": ["Sharing", "Transfer", "Loss", "Gain"],
+    "answer": "Sharing",
+    "explanation": "Covalent = sharing electrons"
+  },
+  {
+    "subject": "Physics",
+    "chapter": "Thermodynamics",
+    "year": 2020,
+    "question": "Unit of heat?",
+    "options": ["Joule", "Watt", "Newton", "Pascal"],
+    "answer": "Joule",
+    "explanation": "SI unit = Joule"
+  },
+  {
+    "subject": "Math",
+    "chapter": "Limits",
+    "year": 2023,
+    "question": "lim x→0 (sinx/x)?",
+    "options": ["1", "0", "∞", "-1"],
+    "answer": "1",
+    "explanation": "Standard limit"
+  },
+  {
+    "subject": "Chemistry",
+    "chapter": "States of Matter",
+    "year": 2022,
+    "question": "Gas equation?",
+    "options": ["PV=nRT", "E=mc²", "F=ma", "None"],
+    "answer": "PV=nRT",
+    "explanation": "Ideal gas law"
+  },
+  {
+    "subject": "Physics",
+    "chapter": "Modern Physics",
+    "year": 2021,
+    "question": "Photon has?",
+    "options": ["Energy", "Mass", "Charge", "None"],
+    "answer": "Energy",
+    "explanation": "E=hf"
+  },
+  {
+    "subject": "Math",
+    "chapter": "Vectors",
+    "year": 2020,
+    "question": "Dot product formula?",
+    "options": ["a·b=abcosθ", "a+b", "a-b", "None"],
+    "answer": "a·b=abcosθ",
+    "explanation": "Definition"
+  },
+  {
+    "subject": "Chemistry",
+    "chapter": "Thermochemistry",
+    "year": 2023,
+    "question": "Exothermic reaction releases?",
+    "options": ["Heat", "Light", "Mass", "None"],
+    "answer": "Heat",
+    "explanation": "Energy released"
+  },
+  {
+    "subject": "Physics",
+    "chapter": "Waves",
+    "year": 2022,
+    "question": "Wave speed formula?",
+    "options": ["v=fλ", "v=f/λ", "v=λ/f", "None"],
+    "answer": "v=fλ",
+    "explanation": "Basic wave relation"
+  }
+]
