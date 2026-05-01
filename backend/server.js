@@ -18,13 +18,14 @@ app.get("/test", (req, res) => {
 
 const SECRET = process.env.SECRET;
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  tls: true,
+  tlsAllowInvalidCertificates: true
+})
   .then(() => console.log("✅ MongoDB Connected"))
-  .catch(err => {
-    console.error("❌ MongoDB Error:", err);
-    process.exit(1); // stop server if DB fails
-  });
-
+  .catch(err => console.error("❌ MongoDB Error:", err));
 // --- SCHEMAS ---
 const UserSchema = new mongoose.Schema({
   name: { type: String, default: "Test User" },
