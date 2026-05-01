@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
-
+const fs = require("fs");
 const app = express();
 // Replace your old app.use(cors(...)) with this:
 app.use(cors({
