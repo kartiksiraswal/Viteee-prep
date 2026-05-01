@@ -178,5 +178,176 @@
     "options": ["v=fλ", "v=f/λ", "v=λ/f", "None"],
     "answer": "v=fλ",
     "explanation": "Basic wave relation"
-  }
+  },
+{
+  "subject": "Physics",
+  "chapter": "Mechanics",
+  "year": 2023,
+  "question": "Force is equal to?",
+  "options": ["ma", "mv", "m/a", "v/a"],
+  "answer": "ma",
+  "explanation": "Newton’s second law F = ma"
+},
+{
+  "subject": "Physics",
+  "chapter": "Mechanics",
+  "year": 2022,
+  "question": "Unit of force?",
+  "options": ["Newton", "Joule", "Watt", "Pascal"],
+  "answer": "Newton",
+  "explanation": "SI unit of force"
+},
+{
+  "subject": "Physics",
+  "chapter": "Gravitation",
+  "year": 2021,
+  "question": "Acceleration due to gravity on Earth?",
+  "options": ["9.8 m/s²", "10 m/s²", "8 m/s²", "12 m/s²"],
+  "answer": "9.8 m/s²",
+  "explanation": "Standard value"
+},
+{
+  "subject": "Math",
+  "chapter": "Algebra",
+  "year": 2023,
+  "question": "Value of x if x+2=5?",
+  "options": ["3", "2", "5", "7"],
+  "answer": "3",
+  "explanation": "x=5-2"
+},
+{
+  "subject": "Math",
+  "chapter": "Algebra",
+  "year": 2022,
+  "question": "If x=2, find x³",
+  "options": ["8", "4", "6", "2"],
+  "answer": "8",
+  "explanation": "2³ = 8"
+},
+{
+  "subject": "Math",
+  "chapter": "Trigonometry",
+  "year": 2021,
+  "question": "tan 45° = ?",
+  "options": ["1", "0", "√3", "1/√3"],
+  "answer": "1",
+  "explanation": "Standard value"
+},
+{
+  "subject": "Math",
+  "chapter": "Trigonometry",
+  "year": 2020,
+  "question": "cos 0° = ?",
+  "options": ["1", "0", "-1", "∞"],
+  "answer": "1",
+  "explanation": "Basic identity"
+},
+{
+  "subject": "Chemistry",
+  "chapter": "Organic Chemistry",
+  "year": 2023,
+  "question": "Methane formula?",
+  "options": ["CH4", "C2H6", "CH3", "C3H8"],
+  "answer": "CH4",
+  "explanation": "Basic hydrocarbon"
+},
+{
+  "subject": "Chemistry",
+  "chapter": "Organic Chemistry",
+  "year": 2022,
+  "question": "Ethanol formula?",
+  "options": ["C2H5OH", "CH4", "C2H6", "C3H8"],
+  "answer": "C2H5OH",
+  "explanation": "Alcohol"
+},
+{
+  "subject": "Physics",
+  "chapter": "Waves",
+  "year": 2021,
+  "question": "Frequency unit?",
+  "options": ["Hz", "m", "s", "kg"],
+  "answer": "Hz",
+  "explanation": "Hertz"
+},
+{
+  "subject": "Physics",
+  "chapter": "Optics",
+  "year": 2020,
+  "question": "Lens formula?",
+  "options": ["1/f=1/v+1/u", "v=ut+at²", "F=ma", "None"],
+  "answer": "1/f=1/v+1/u",
+  "explanation": "Lens formula"
+},
+{
+  "subject": "Math",
+  "chapter": "Calculus",
+  "year": 2023,
+  "question": "Integral of 1 dx?",
+  "options": ["x", "1", "0", "x²"],
+  "answer": "x",
+  "explanation": "∫1 dx = x"
+},
+{
+  "subject": "Math",
+  "chapter": "Limits",
+  "year": 2022,
+  "question": "lim x→∞ (1/x)?",
+  "options": ["0", "1", "∞", "-1"],
+  "answer": "0",
+  "explanation": "Approaches zero"
+},
+{
+  "subject": "Chemistry",
+  "chapter": "Thermodynamics",
+  "year": 2021,
+  "question": "SI unit of energy?",
+  "options": ["Joule", "Watt", "Newton", "Pascal"],
+  "answer": "Joule",
+  "explanation": "Energy unit"
+},
+{
+  "subject": "Chemistry",
+  "chapter": "Electrochemistry",
+  "year": 2020,
+  "question": "Charge unit?",
+  "options": ["Coulomb", "Volt", "Ampere", "Ohm"],
+  "answer": "Coulomb",
+  "explanation": "SI unit"
+},
+{
+  "subject": "Physics",
+  "chapter": "Modern Physics",
+  "year": 2023,
+  "question": "Planck constant symbol?",
+  "options": ["h", "c", "g", "e"],
+  "answer": "h",
+  "explanation": "Quantum constant"
+},
+{
+  "subject": "Math",
+  "chapter": "Vectors",
+  "year": 2022,
+  "question": "Magnitude of vector formula?",
+  "options": ["√(x²+y²)", "x+y", "x-y", "xy"],
+  "answer": "√(x²+y²)",
+  "explanation": "Distance formula"
+},
+{
+  "subject": "Chemistry",
+  "chapter": "Periodic Table",
+  "year": 2021,
+  "question": "Atomic number of Hydrogen?",
+  "options": ["1", "2", "3", "4"],
+  "answer": "1",
+  "explanation": "1 proton"
+},
+{
+  "subject": "Physics",
+  "chapter": "Current Electricity",
+  "year": 2020,
+  "question": "Unit of resistance?",
+  "options": ["Ohm", "Volt", "Ampere", "Watt"],
+  "answer": "Ohm",
+  "explanation": "SI unit"
+}
 ]
